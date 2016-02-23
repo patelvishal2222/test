@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Test</id>
+    <version>$version$</version>
+    <title>Test</title>
+    <authors>GAP SOFTWARE SERVICES PVT. LTD</authors>
+    <owners>RecordFlow</owners>
+    <licenseUrl>http://orderflow.recordflow.com</licenseUrl>
+    <projectUrl>http://orderflow.recordflow.com</projectUrl>
+    <iconUrl>http://orderflow.recordflow.com</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A list of services running in a background to support an APS application.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Test</tags>
+  </metadata>
+  <files>
+    <file src="D:\project\Test\Test\bin\Debug\*.exe" target="content" />
+  </files> 
+</package>
