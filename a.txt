@@ -1,8 +1,12 @@
-sadadadaasda
-hkhjk
-testing
-
-asasdasdsa
-
-
-i testind  dataaasdads
+ var strData = jQuery('#trDocumentDetails').serializeContents();
+ var inputs_to_values = {
+    'coordX_0' : 'some value',
+    'coordY_0' : 'some other value',
+    'edit_0'   : 'N',
+    'remove_0' : '_',
+    'add_0'    : '-',
+    'go_0'     : 'stop?'
+};
+$('#form_coord_0').find('input').val(function (index, value) {
+    return inputs_to_values[this.id];
+});
