@@ -1,0 +1,65 @@
+AMPS is amount of electricity.
+VOLTS is the Push, not the amount(Pressure).
+OHMS slows the flow.
+WATTS is how much gets done.
+
+
+Water = Charge (measured in Coulombs)
+Pressure = Voltage (measured in Volts)
+Flow = Current (measured in Amperes, or “Amps” for short)
+
+
+
+v=I*R
+
+Where
+
+    V = Voltage in volts
+    I = Current in amps
+    R = Resistance in ohms
+
+
+
+Ohm's Law: 
+    R = Resistance (ohms)
+    E = Electro-motive Force (volts)
+    I = Intensity of Current (amps) 
+
+I*R = E
+
+ express work done: Power formula (PIE Law):
+
+Where:
+    P = Power (watts) 
+    I = Intensity of Current (amps) 
+    V = Electro-motive Force (volts)
+
+P = IV
+I=Q/T=dQ/dt
+	 
+
+	  P = V * I                     Power = Voltage  * Current
+
+            P = V2 / R                  Power = Voltage2 / Resistance           
+
+            P = I2 * R                     Power = Current2 * Resistance
+	  E = V * I * t                Energy = Voltage  * Current  * time
+
+            E = P * t                      Energy = Power  * time
+
+
+T.R=NP/NS=VP/VS= n(Turns Ration)==>QP=QS=>N1/N2=V1/V2=I2/I1
+E=Turns X Rate of Chage
+E=N*dQ/dt
+VP*IP=VS*IS
+
+
+lectromagnetism:
+Charge  	coulomb  	C  	1 A.s  	[current].[time].                                      ==>C=I*T
+Potential  	volt  	V  	1 W.A-1 	[power]/[current]. Only differences are measurable!    ==>V=P/I
+Resistance  	ohm  	O  	1 V.A-1 	[?potential]/[current].                                ==>R= 
+Conductance  	siemens  	S  	1 A.V-1 	[current]/[?potential]. 
+Capacitance  	farad  	F  	1 C.V-1 	[charge]/[?potential]. 
+Inductance  	henry  	H  	1 V.s.A-1 	[?potential]/[rate of change of current]. 
+Magnetic flux  	weber  	Wb  	1 J.A-1 	[energy]/[current]. 
+Magnetic flux density  	tesla  	T  	1 Wb.m-2 	[magnetic flux]/[area]. Also magnetic induction. 
