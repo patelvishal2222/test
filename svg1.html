@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"  >
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Tutorial: How to Make a Digital Clock with jQuery &amp; CSS3</title>
+
+		<link href="assets/css/style.css" rel="stylesheet" />
+
+	</head>
+<script language="javascript">
+function clickRect()
+	{
+	
+	tool=1;
+
+	}
+	function clickCir()
+		{
+		
+		tool=2;
+			
+
+	}
+var  tool=1;
+var obj=null;
+	  function draw(evt)
+	  {
+	
+	
+		if(tool==1)
+		drawRect(evt);
+		if(tool==2)
+		drawCir(evt);
+		
+		tool=0;
+		
+	  }
+
+function 	drawRect(evt)
+{
+
+var svg=document.getElementById('svg1');
+ var e = evt.target;
+    var dim = e.getBoundingClientRect();
+    var x = evt.clientX - dim.left;
+    var y = evt.clientY - dim.top;
+    console.log("x: "+x+" y:"+y);
+//console.log(svg.offsetLeft );
+ var svgNS = svg.namespaceURI;
+	 var rect = document.createElementNS(svgNS,'rect');
+    rect.setAttribute('x',x);
+    rect.setAttribute('y',y);
+    rect.setAttribute('width',10);
+    rect.setAttribute('height',10);
+    rect.setAttribute('fill','#95B3D7');
+    svg.appendChild(rect);
+
+}
+	function 	drawCir(evt)
+	{
+	var svg=document.getElementById('svg1');
+	 var e = evt.target;
+    var dim = e.getBoundingClientRect();
+    var x = evt.clientX - dim.left;
+    var y = evt.clientY - dim.top;
+	 var svgNS = svg.namespaceURI;
+	 var rect = document.createElementNS(svgNS,'circle');
+    rect.setAttribute('cx',x);
+    rect.setAttribute('cy',y);
+    rect.setAttribute('r',25);
+ rect.setAttribute('onmousedown',"mousedown(this,evt)");
+ rect.setAttribute('onmousemove',"mousemove(this,evt)");
+ rect.setAttribute('onmouseup',"mouseup(this)");
+ rect.setAttribute('onmouseout',"mouseup(this)");
+ //rect.setAttribute('ondrag',"mousemove(this,evt)");
+    rect.setAttribute('fill','#95B3D7');
+    svg.appendChild(rect);
+
+	}
+	
+	function mouseover(obj1)
+	{
+	mouseexit();
+	if(obj==null)
+	{
+		obj=obj1;
+	 obj.style.fill = '#fff';
+	
+	 }
+	 
+	}
+	function mouseexit()
+	{
+	console.log(obj);
+		if(obj!=null)
+		{
+		obj.style.fill = '#95B3D7';
+		obj=null;
+		}
+	}
+	
+	var selectedElement = null;
+var currentX = 0;
+var currentY = 0;
+	 function mousedown(e,evt) {
+            // save the original values when the user clicks on the element
+			mouseup(e);
+            currentX = evt.clientX;
+            currentY = evt.clientY;
+            selectedElement = e;
+			 selectedElement.style.fill = '#fff';
+			 selectedElement.style.cursor="move" ;
+        }
+	function	mousemove(e,evt) {    
+            // if there is an active element, move it around by updating its coordinates           
+		
+            if (selectedElement) {
+			evt.preventDefault();
+                var dx = parseInt(selectedElement.getAttribute("cx")) + evt.clientX - currentX;
+                var dy = parseInt(selectedElement.getAttribute("cy")) + evt.clientY - currentY;
+				console.log(selectedElement.getAttribute("cx")+"  "+ evt.clientX+"   "+currentX);
+                currentX = evt.clientX;
+                currentY = evt.clientY;
+                selectedElement.setAttribute("cx", dx);
+                selectedElement.setAttribute("cy", dy);
+            }
+        }
+	function 	mouseup(e) {
+            // deactivate element when the mouse is up
+			if(selectedElement!=null)
+			{
+			selectedElement.style.fill = '#95B3D7';
+			selectedElement.style.cursor="default";
+			}
+            selectedElement = null;  
+			
+        }
+	
+</script>
+<style>
+#header-search {
+  width: 200px;
+  background: @header-color;
+  color: white;
+  font-size: 12pt;
+  border: 0px solid;
+  outline: 0;
+  vertical-align: -50%;
+}
+
+#header-search::-webkit-input-placeholder {
+  color: white;
+}
+
+#search-button {
+  background: #FFFFFF;
+  vertical-align: -50%;
+}
+
+.header-view-logo {
+  vertical-align: middle;
+}
+
+#search-icon {
+  fill: white;
+}
+</style>
+<body>
+
+
+<input type=button  id=btnrect value=rect  onclick="clickRect()" />
+<input type=button  id=btncir value=cir onclick="clickCir()" />
+
+
+ <svg id=svg1  height=500 width=500  onclick="draw(evt)"   >
+
+
+</svg>
+<button id="search-button" />
+<svg id="search-icon" class="search-icon" viewBox="0 0 24 24">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+
+</body>
+</html>
